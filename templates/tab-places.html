@@ -1,0 +1,11 @@
+<ion-view title="SnapViva">
+  <ion-content class="has-header padding">
+    <div class="list">
+      <a class="item item-avatar" href="#/tab/place/{{places.indexOf(place)}}" ng-repeat="place in places">
+        <img src="{{ place.logo_url }}">
+        <h2>{{ place.name }}</h2>
+        <p>{{ place.description }}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

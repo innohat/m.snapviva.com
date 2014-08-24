@@ -1,0 +1,30 @@
+<ion-view title="SnapViva">
+  <ion-content class="has-header padding">
+    <div class="button-bar" ng-if="showSegmented">
+      <a class="button" ng-click="filterPhotosMe()">My Photos</a>
+      <a class="button" ng-click="filterPhotosAll()">All Photos</a>
+    </div>
+    <ion-list on-infinite-scroll="loadMore()">
+			<div class="list card" ng-show="data.noPhoto">
+				<div class="item item-text-wrap">
+					<i class="icon ion-looping"></i> Loading photos for you to redeem rewards ...
+				</div>
+			</div>
+      <div class="list card" ng-repeat="photo in photos">
+        <div class="item item-avatar">
+          <img height="auto" src="{{ photo.user.profile.avatar_url}}">
+          <h2>{{ photo.user.profile.name }}</h2>
+          <p>{{ photo.message }}</p>
+        </div>
+        <div class="item item-image">
+          <img src="{{ photo.photo_url }}">
+        </div>
+        <a href="#/tab/redeem/{{photos.indexOf(photo)}}" class="redeem item item-icon-right assertive" ng-show="photo.redeemable && photo.shared_on_facebook && !photo.redeemed">
+          <i class="icon ion-bag"></i>
+          Redeem
+        </a>
+      </div>
+    </ion-list>
+		<ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

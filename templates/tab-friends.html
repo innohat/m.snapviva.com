@@ -1,0 +1,15 @@
+<ion-view title="SnapViva">
+  <ion-content class="has-header padding">
+    <div class="list">
+			<a class="item" href="#/tab/friend_photos/me">
+				My Photos
+			</a>
+		</div>
+		<div class="list">
+      <a class="item item-avatar" href="#/tab/friend_photos/{{friend.uuid}}" ng-repeat="friend in friends">
+        <img src="{{ friend.profile.avatar_url }}">
+        <h2>{{ friend.profile.name }}</h2>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

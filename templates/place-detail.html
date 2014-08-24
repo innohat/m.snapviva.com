@@ -1,0 +1,19 @@
+<ion-view title="{{place.name}}">
+  <ion-content has-header="true" padding="true">
+    <div class="item item-avatar">
+      <img height="auto" src="{{place.logo_url}}">
+      <h2>{{place.name}}</h2>
+      <p>Also known as {{place.alais}}</p>
+    </div>
+    <a class="item" href="#/tab/photo/{{placeId}}/0" style="background-color: #ee826d; color: white; text-align:center;">
+      <i class="icon ion-android-camera"></i>
+      Snap
+    </a>
+    <div class="item item-text-wrap">
+      <p>{{place.description}}</p>
+    </div>
+    <div class="item item-image">
+      <img id="frame" src="{{place.frames[0].url}}">
+		</div>
+  </ion-content>
+</ion-view>

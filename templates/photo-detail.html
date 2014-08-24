@@ -1,0 +1,31 @@
+<ion-view title="Create Photo">
+  <ion-content has-header="true" padding="true" style="background: white;">
+    <div class="item item-avatar">
+      <img height="auto" src="{{place.logo_url}}">
+      <h2>{{place.name}}</h2>
+      <p>Also known as {{place.alais}}</p>
+    </div>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Message</span>
+      <textarea ng-model="message" placeholder="Write down your thoughts about this place ..." rows="4"></textarea>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Photo</span>
+      <input id="camera-photo" type="file" accept="image/*" capture="camera">
+    </label>
+    <div class="item" ng-click="create();" style="background-color: #ee826d; color: white; text-align:center;">
+      <i class="icon ion-share"></i>
+      Share
+    </div>
+    <br>
+    <li class="item item-checkbox">
+       <label class="checkbox">
+         <input type="checkbox" ng-model="data.shareOnFacebook">
+       </label>
+       Share On Facebook
+    </li>
+    <div class="item item-text-wrap" ng-hide="data.shareOnFacebook">
+      You will not be able to redeem if you don't share the photo on Facebook.
+    </div>
+  </ion-content>
+</ion-view>
